@@ -68,19 +68,20 @@ One note before you delve into your tasks: for each endpoint you are expected to
 
 # API Reference
 
-## Getting Started
+## Getting Started:
     Base URL: Currently this application is only hosted locally.
     The backend is hosted at http://127.0.0.1:5000/
     Authentication: This version does not require authentication or API keys.
-## Error Handling
+## Error Handling:
     Errors are returned as JSON in the following format:
-
+```
 {
     "success": False,
     "error": 404,
     "message": "resource not found"
 }
-The API will return three types of errors:
+```
+#### The API will return three types of errors:
 
 - 400 – bad request
 - 404 – resource not found
