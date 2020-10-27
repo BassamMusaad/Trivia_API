@@ -68,11 +68,12 @@ One note before you delve into your tasks: for each endpoint you are expected to
 
 # API Reference
 
-Getting Started
-Base URL: Currently this application is only hosted locally. The backend is hosted at http://127.0.0.1:5000/
-Authentication: This version does not require authentication or API keys.
-Error Handling
-Errors are returned as JSON in the following format:
+## Getting Started
+    Base URL: Currently this application is only hosted locally.
+    The backend is hosted at http://127.0.0.1:5000/
+    Authentication: This version does not require authentication or API keys.
+## Error Handling
+    Errors are returned as JSON in the following format:
 
 {
     "success": False,
@@ -81,14 +82,14 @@ Errors are returned as JSON in the following format:
 }
 The API will return three types of errors:
 
-400 – bad request
-404 – resource not found
-422 – unprocessable
-500 - Internal Server Error
+- 400 – bad request
+- 404 – resource not found
+- 422 – unprocessable
+- 500 - Internal Server Error
 
-Endpoints:
+## Endpoints:
 
-GET '/categories'
+### GET '/categories'
 - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
 - Request Arguments: None
 - Example response: 
@@ -101,7 +102,7 @@ GET '/categories'
     '6' : "Sports"
 }
 
-GET '/questions'
+### GET '/questions'
 - Fetches a paginated dictionary of questions of all available categories.
 - Request Arguments:<int:page>
 - Example response:
@@ -134,7 +135,7 @@ GET '/questions'
     "totalQuestions":2 
 }
 
-DELETE '/questions/<int:question_id>'
+### DELETE '/questions/<int:question_id>'
 - Delete an existing questions from the repository of available question
 - Request Arguments:<int:question id>
 - Example response:
@@ -166,7 +167,7 @@ DELETE '/questions/<int:question_id>'
     "totalQuestions":2
 }
 
-POST '/questions'
+### POST '/questions'
 -  Add a new question to the database
 -  Request body: <string:question, string:answer, int:difficulty, string:category>
 -  Example response:
@@ -174,7 +175,7 @@ POST '/questions'
   'success': True  
 }
 
-POST '/questions/search'
+### POST '/questions/search'
 - Fetches all questions where a substring matches the search term
 - Request body: <string:search Term>
 - Example response:
@@ -192,7 +193,7 @@ POST '/questions/search'
     "currentCategory": None
 }
 
-GET '/categories/<int:category_id>/questions'
+### GET '/categories/<int:category_id>/questions'
 - Fetches a dictionary of questions for the specified category
 - Request body: <int:category id>
 - Example response:
@@ -217,7 +218,7 @@ GET '/categories/<int:category_id>/questions'
     "currentCategory": 5
 }
 
-POST '/quizzes'
+### POST '/quizzes'
 - Fetches one random question within a specified category. Previously asked questions are not asked again.
 - Request body: <int:category id>
 - Example response:
