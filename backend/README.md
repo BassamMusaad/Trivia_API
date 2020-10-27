@@ -89,10 +89,11 @@ The API will return three types of errors:
 
 ## Endpoints:
 
-### GET '/categories'
+#### GET '/categories'
 - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
 - Request Arguments: None
 - Example response: 
+```
 {
     '1' : "Science",
     '2' : "Art",
@@ -101,11 +102,13 @@ The API will return three types of errors:
     '5' : "Entertainment",
     '6' : "Sports"
 }
+```
 
-### GET '/questions'
+#### GET '/questions'
 - Fetches a paginated dictionary of questions of all available categories.
 - Request Arguments:<int:page>
 - Example response:
+```
 {
     "categories":{
         "1":"Science",
@@ -134,11 +137,13 @@ The API will return three types of errors:
     "success":true,
     "totalQuestions":2 
 }
+```
 
-### DELETE '/questions/<int:question_id>'
+#### DELETE '/questions/<int:question_id>'
 - Delete an existing questions from the repository of available question
 - Request Arguments:<int:question id>
 - Example response:
+```
 {
     "categories":{
         "1":"Science",
@@ -166,19 +171,23 @@ The API will return three types of errors:
     "success":true,
     "totalQuestions":2
 }
+```
 
-### POST '/questions'
+#### POST '/questions'
 -  Add a new question to the database
 -  Request body: <string:question, string:answer, int:difficulty, string:category>
 -  Example response:
+```
 {
   'success': True  
 }
+```
 
-### POST '/questions/search'
+#### POST '/questions/search'
 - Fetches all questions where a substring matches the search term
 - Request body: <string:search Term>
 - Example response:
+```
 {
    "questions":
     [{
@@ -192,11 +201,13 @@ The API will return three types of errors:
     "totalQuestions":1,
     "currentCategory": None
 }
+```
 
-### GET '/categories/<int:category_id>/questions'
+#### GET '/categories/<int:category_id>/questions'
 - Fetches a dictionary of questions for the specified category
 - Request body: <int:category id>
 - Example response:
+```
 {
     "success": True,
     "questions":
@@ -217,11 +228,13 @@ The API will return three types of errors:
     "totalQuestions":2,
     "currentCategory": 5
 }
+```
 
-### POST '/quizzes'
+#### POST '/quizzes'
 - Fetches one random question within a specified category. Previously asked questions are not asked again.
 - Request body: <int:category id>
 - Example response:
+```
 {
     "success": True,
     "question"{
@@ -232,6 +245,7 @@ The API will return three types of errors:
             "question":"What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
             }
 }
+```
 
 
 
@@ -240,6 +254,7 @@ The API will return three types of errors:
 ```
 ## Testing
 To run the tests, run
+```
 ```
 dropdb trivia_test
 createdb trivia_test
